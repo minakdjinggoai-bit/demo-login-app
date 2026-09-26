@@ -1,0 +1,1 @@
+import {describe,it,expect} from 'vitest'; import {isEmailMatch} from '../lib/auth'; describe('auth',()=>{it('matches email case-insensitively',()=>{expect(isEmailMatch('User@Example.com')).toBe(true)})});

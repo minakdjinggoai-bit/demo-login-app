@@ -1,0 +1,3 @@
+'use client';
+import {useState} from 'react'; import {isEmailMatch} from '@/lib/auth';
+export default function Page(){const [email,setEmail]=useState('User@Example.com'); const [msg,setMsg]=useState(''); return <main><h1>Login Demo</h1><div className="card"><p>Registered account: <b>user@example.com</b></p><input className="input" value={email} onChange={e=>setEmail(e.target.value)}/><br/><br/><button className="btn" onClick={()=>setMsg(isEmailMatch(email)?'Login success':'Login failed')}>Login</button><p className={msg.includes('success')?'ok':'danger'}>{msg}</p><p className="muted">Bug: email matching should ignore letter casing.</p></div></main>}
